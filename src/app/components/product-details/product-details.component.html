@@ -1,0 +1,30 @@
+<div class="toolbar">
+    <h1>Product Details</h1>
+</div>
+<div class="product-details-container">
+    @if(productData) {
+<mat-card class="product-card">
+    <mat-card-header>
+      <mat-card-title>{{ productData?.name }}</mat-card-title>
+      <mat-card-subtitle>Category: {{getCategoryNameByValue(productData?.category)}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="product-info">
+        <div><strong>Price:</strong> ${{ productData?.price }}</div>
+        <div><strong>Stock:</strong> {{ productData?.quantityInStock }} units available</div>
+        <div><strong>Description:</strong></div>
+        <p>{{ productData?.description }}</p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-fab extended (click)="editProduct()">
+          <mat-icon>edit</mat-icon>
+          Edit Product
+        </button>
+      <!-- <button mat-button color="primary">Buy Now</button>
+      <button mat-button color="warn">Add to Cart</button> -->
+    </mat-card-actions>
+  </mat-card>
+    }
+  
+</div>
