@@ -26,15 +26,6 @@ interface Product {
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent {
-  // @Input() product: Product | null = null; // Receiving product details as input
-  // public product = {
-  //   name: 'prod name',
-  //   price: 199.99,
-  //   category: 'Electronics',
-  //   description: 'A top-of-the-line widget for all your needs. Built with durability and performance in mind.',
-  //   quantityInStock: 50
-  // };
-
   public productData: any;
   private id: any;
 

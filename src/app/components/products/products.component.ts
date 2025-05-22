@@ -26,17 +26,6 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-// const ELEMENT_DATA: Product[] = [
-//   {id: 1, name: 'Hydrogen', price: 1.0079, category: 0, description: 'some description', quantityInStock: 21},
-//   {id: 2, name: 'Hydrogen', price: 1.0079, category: 0, description: 'some description', quantityInStock: 21},
-//   {id: 3, name: 'Hydrogen', price: 1.0079, category: 0, description: 'some description', quantityInStock: 21},
-//   {id: 4, name: 'Hydrogen', price: 1.0079, category: 0, description: 'some description', quantityInStock: 21},
-//   {id: 5, name: 'Hydrogen', price: 1.0079, category: 0, description: 'some description', quantityInStock: 21},
-//   {id: 6, name: 'Hydrogen', price: 1.0079, category: 0, description: 'some description', quantityInStock: 21},
-//   {id: 7, name: 'Hydrogen', price: 1.0079, category: 0, description: 'some description', quantityInStock: 21},
-//   {id: 8, name: 'Hydrogen', price: 1.0079, category: 0, description: 'some description', quantityInStock: 21}
-// ];
-
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -72,9 +61,7 @@ export class ProductsComponent {
   }
 
   ngAfterViewInit() {
-    // this.dataSource.paginator = this.paginator;
     this.paginator.page.subscribe((event: PageEvent) => {
-      // You can trigger a service or function here to fetch paged data
       this.loadProducts(event.pageIndex + 1, event.pageSize);
     });
   }
